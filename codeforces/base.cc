@@ -35,5 +35,10 @@ void solve(){
 
 
 int main(){
+	// no sync with stdio
+	ios_base::sync_with_stdio(false);
+	// no thread safe since there is only one thread
+	cin.tie(nullptr);
+
 	return 0;
 }
