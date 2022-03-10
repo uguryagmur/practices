@@ -1,10 +1,13 @@
-// Competitive programming base	C++ file
-//
-// Author: C. Ugur Yagmur
-//
+/*
+ * Author: Ugur Yagmur 
+ * Definition of the problem:
+ * 
+ *
+ */
 
 #include <algorithm>
 #include <iostream>
+#include <cmath>
 #include <fstream>
 #include <vector>
 #include <set>
@@ -20,6 +23,7 @@ using namespace std;
 
 typedef double d;
 typedef long long ll;
+typedef long double ld;
 typedef vector<int> vi;
 typedef vector<ll> vll;
 typedef vector<d> vd;
