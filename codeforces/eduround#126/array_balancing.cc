@@ -1,7 +1,7 @@
 /*
  * Author: Ugur Yagmur 
  * Definition of the problem:
- * http://codeforces.com/contest/1657/problem/C
+ * 
  *
  */
 
@@ -10,7 +10,6 @@
 #include <cmath>
 #include <fstream>
 #include <vector>
-#include <stack>
 #include <set>
 #include <map>
 #include <unordered_set>
@@ -31,25 +30,14 @@ typedef vector<d> vd;
 typedef vector<string> vs;
 
 
-void solve(std::string seq){
-	ll num_ops = 0, i;	
-	ll len = seq.size();
-	for(i=1; i< len; i++){
-		if (seq[i] == '('){
-			i++;
-		}
-		else{
-			ll r = i;
-			while (r < len && seq[r] != ')'){
-				r++;
-			}
-			if (r == len)
-				break;
-			i = r;
-		}
-		num_ops++;
+void solve(vll a, vll b){
+	ll result = 0, poss1, poss2;
+	for (int i=1; i < a.size(); i++){
+		poss1 = abs(a[i-1] - a[i]) + abs(b[i-1] - b[i]);
+		poss2 = abs(a[i-1] - b[i]) + abs(b[i-1] - a[i]);
+		result += min(poss1, poss2);
 	}
-	cout << num_ops << ' ' << (ll) seq.size() - i << '\n';
+	cout << result << '\n';
 }
 
 
@@ -59,14 +47,18 @@ int main(){
 	// no thread safe since there is only one thread
 	cin.tie(nullptr);
 
-	int test_num;
-	std::string seq;
-	int seq_size;
+	int test_num, arr_size;
 	cin >> test_num;
-	for (int i = 0; i < test_num; i++){
-		cin >> seq_size;
-		cin >> seq;
-		solve(seq);
+	for (int i=1; i <= test_num; i++){
+		cin >> arr_size;
+		vll a(arr_size), b(arr_size);
+		for (int j=0; j < arr_size; j++){
+			cin >> a[j];
+		}
+		for (int j=0; j < arr_size; j++){
+			cin >> b[j];
+		}
+		solve(a, b);
 	}
 	return 0;
 }
