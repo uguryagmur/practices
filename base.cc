@@ -6,18 +6,19 @@
  */
 
 #include <algorithm>
-#include <iostream>
+#include <bits/stdc++.h>
 #include <cmath>
 #include <fstream>
-#include <vector>
-#include <set>
+#include <iostream>
 #include <map>
+#include <set>
+#include <stdio.h>
 #include <unordered_set>
 #include <unordered_map>
+#include <vector>
 
 #define hmap unordered_map
 #define hset unordered_set
-
 
 using namespace std;
 
@@ -29,15 +30,12 @@ typedef vector<ll> vll;
 typedef vector<d> vd;
 typedef vector<string> vs;
 
+#ifndef ONLINE_JUDGE
+	FILE* iFile = freopen("input.txt", "r", stdin);
+	FILE* oFile = freopen("output.txt", "w", stdout);
+#endif
 
-void solve(vll a, vll b){
-	ll result = 0, poss1, poss2;
-	for (int i=1; i < a.size(); i++){
-		poss1 = abs(a[i-1] - a[i]) + abs(b[i-1] - b[i]);
-		poss2 = abs(a[i-1] - b[i]) + abs(b[i-1] - a[i]);
-		result += min(poss1, poss2);
-	}
-	cout << result << '\n';
+void solve(){
 }
 
 
@@ -47,18 +45,5 @@ int main(){
 	// no thread safe since there is only one thread
 	cin.tie(nullptr);
 
-	int test_num, arr_size;
-	cin >> test_num;
-	for (int i=1; i <= test_num; i++){
-		cin >> arr_size;
-		vll a(arr_size), b(arr_size);
-		for (int j=0; j < arr_size; j++){
-			cin >> a[j];
-		}
-		for (int j=0; j < arr_size; j++){
-			cin >> b[j];
-		}
-		solve(a, b);
-	}
 	return 0;
 }
