@@ -1,5 +1,5 @@
 /*
- * Author: Ugur Yagmur 
+ * Author: Ugur Yagmur
  * Definition of the problem:
  * 
  *
@@ -17,18 +17,24 @@
 #include <unordered_map>
 #include <vector>
 
-#define hmap unordered_map
-#define hset unordered_set
+#define print_cont(arr) for(auto e: arr) cout << e << " "; cout << endl;
+#define print_map(arr) for(auto e: arr) cout << e.first << " " << e.second << " "; cout << endl;
 
 using namespace std;
 
 typedef double d;
+typedef string s;
 typedef long long ll;
 typedef long double ld;
+typedef set<int> si;
+typedef set<ll> sll;
+typedef set<ld> sld;
+typedef set<s> ss;
 typedef vector<int> vi;
 typedef vector<ll> vll;
-typedef vector<d> vd;
-typedef vector<string> vs;
+typedef vector<ld> vld;
+typedef vector<s> vs;
+
 
 #ifndef ONLINE_JUDGE
 	FILE* iFile = freopen("input.txt", "r", stdin);
