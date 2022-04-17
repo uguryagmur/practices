@@ -1,7 +1,5 @@
 /*
  * Author: Ugur Yagmur
- * Definition of the problem:
- * 
  *
  */
 
@@ -51,5 +49,10 @@ int main(){
 	// no thread safe since there is only one thread
 	cin.tie(nullptr);
 
+	int test_num;
+	cin >> test_num;
+	for (int i=1; i < test_num + 1; i++){
+
+	}
 	return 0;
 }
