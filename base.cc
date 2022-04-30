@@ -52,7 +52,12 @@ int main(){
 	int test_num;
 	cin >> test_num;
 	for (int i=1; i < test_num + 1; i++){
-
+		ll size;
+		cin >> size;
+		vll seq(size);
+		for (int j=0; j<size; j++){
+			cin >> seq[j];
+		}
 	}
 	return 0;
 }
